@@ -1,16 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import Template, Context, loader
+from app_1.models import Familiares
 
-def familia(request):
-    #Abro el documento que contiene al template
-    template_ext = open("/home/sebx3/Documentos/CURSO_CODER_PYTHON/python/desafio_mvt/mi_desafiomvt/app_1/templates/app_1/familia.html")
-    #Cargo el documento en una variable de tipo "Template"
-    template = Template(template_ext.read())
-    #Cierro el documento
-    template_ext.close()
-    #Creo el contexto
-    contexto = Context()
-    #Renderizo template
-    documento = template.render(contexto)
-    return HttpResponse(documento)
+def listar_familia(request):
+    #cargo template desde app_1
+    plantilla=loader.get_template("mi_familia.html")
+    #instanciar y consultamos todos los objetos agregados en la BD
+    lista_familia = Familiares.objects.all()
+    #retorno renderizo, establezco mi vista .html y envio diccionario con el objeto que contiene todos los datos de la BD. 
+    return render(request,"mi_familia.html",{"lista_familia":lista_familia})

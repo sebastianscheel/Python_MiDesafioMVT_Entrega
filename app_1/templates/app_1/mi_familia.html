@@ -29,14 +29,16 @@
             </tr>
           </thead>
           <tbody>
+            {%for lista_familia in lista_familia%}
             <tr>
-              <th scope="row">familiar.id</th>
-              <td>familiar.nombre</td>
-              <td>familiar.apellido</td>
-              <td>familiar.fecha_nacimiento</td>
-              <td>familiar.telefono</td>
-              <td>familiar.correo</td>
+              <th scope="row">{{lista_familia.id}}</th>
+              <td>{{lista_familia.nombre}}</td>
+              <td>{{lista_familia.apellido}}</td>
+              <td>{{lista_familia.fecha_nacimiento}}</td>
+              <td>{{lista_familia.telefono}}</td>
+              <td>{{lista_familia.correo}}</td>
             </tr>
+            {% endfor %}
           </tbody>
         </table>
       </div>

@@ -20,6 +20,5 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('lista/',familia)
     path('app_1',include('app_1.urls'))
 ]
