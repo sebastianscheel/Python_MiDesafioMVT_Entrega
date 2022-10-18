@@ -55,7 +55,7 @@ ROOT_URLCONF = 'mi_desafiomvt.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/home/sebx3/Documentos/CURSO_CODER_PYTHON/python/desafio_mvt/mi_desafiomvt/mi_desafiomvt/templates/'],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
